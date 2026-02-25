@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Plant Image</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Upload Plant Image 🌱</h1>
+
+    <form action="/result" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" onchange="showPreview(event)" required>
+        <br><br>
+
+        <img id="preview"
+             src="{{ url_for('static', filename='images/default_leaf.jpg') }}"
+             class="result-img">
+
+        <br><br>
+
+        <button type="submit">Predict Disease</button>
+    </form>
+
+    <br>
+    <a href="/">Back Home</a>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
